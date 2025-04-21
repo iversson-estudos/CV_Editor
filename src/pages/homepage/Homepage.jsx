@@ -7,6 +7,6 @@ export default function Homepage(){
 return(
 <>
 <p className={styles.para}>Welcome to the CV Application</p>
-<button className={styles.btn}>Lets Go</button>
+<button className={styles.btn}><span class="text">Lets Go</span></button>
 </>
 )}
