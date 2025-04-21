@@ -3,8 +3,9 @@
 :root{
     --font:"Titillium Web", sans-serif;
     --fontsize-small:16px;
-    --fontsize-medium:24px;
-    --fontsize-big:32px;
+    --fontsize-medium:32px;
+    --fontsize-big:64px;
+    --bgcolor: darkslateblue;
     
 }
 
@@ -16,5 +17,5 @@ body{
     font-family: var(--font);
     font-style: normal;
     font-weight: 200;
-    background-color: darkslateblue;
+    background-color: var(--bgcolor);
 }

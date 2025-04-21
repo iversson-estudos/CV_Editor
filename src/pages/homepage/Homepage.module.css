@@ -9,7 +9,7 @@ body {
         align-items: center;
         justify-content: center;
         text-align: center;
-        gap: 16px;
+        gap: 12vh;
 
         .para {
             font-size: var(--fontsize-big);
@@ -17,8 +17,16 @@ body {
             color: white;
         }
         .btn{
-            
+            font-size: var(--fontsize-medium);
+            background-color: var(--bgcolor);
+            color: white;
+            padding: 5px;
+            border-radius: 1rem;
+            border: 4px solid white;
+            user-select: none;
+            cursor: pointer;
         }
+        
     }
         
 }
