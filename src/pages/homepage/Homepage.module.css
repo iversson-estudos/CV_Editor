@@ -17,6 +17,8 @@ body {
             color: white;
         }
         .btn{
+            position: relative;
+            width: max-content;
             font-size: var(--fontsize-medium);
             background-color: var(--bgcolor);
             color: white;
@@ -25,6 +27,15 @@ body {
             border: 4px solid white;
             user-select: none;
             cursor: pointer;
+        }
+        .btn:hover::after{
+            content: '';
+            background-color: greenyellow;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
         }
         
     }
