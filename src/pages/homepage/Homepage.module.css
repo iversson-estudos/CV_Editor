@@ -20,6 +20,7 @@ body {
         .btn{
             position: relative;
             width: max-content;
+            overflow: hidden;
             padding: 4px;
             font-size: var(--fontsize-medium);
             background-color: var(--bgcolor);
@@ -40,10 +41,10 @@ body {
             left: 0;
             transition: 1000ms;
         }
-        .btn:hover::after{
+        .btn:hover::after{   
+            border: none;
             border-radius: 1rem;
             color: white;
-            left: 2px;
             width: 100%;
         }
         
