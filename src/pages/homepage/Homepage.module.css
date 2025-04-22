@@ -22,20 +22,25 @@ body {
             font-size: var(--fontsize-medium);
             background-color: var(--bgcolor);
             color: white;
-            padding: 5px;
-            border-radius: 1rem;
-            border: 4px solid white;
+            outline-style:solid;
             user-select: none;
-            cursor: pointer;
+            cursor:pointer;
         }
-        .btn:hover::after{
-            content: '';
-            background-color: greenyellow;
+        .btn::after{
+            content: '>';
+            color: rgba(255, 255, 255, 0);
+            background-color: var(--bgcolor);
             position: absolute;
+            border-radius: 4rem;
             height: 100%;
-            width: 100%;
+            width: 0;
             top: 0;
             left: 0;
+            transition: 1000ms;
+        }
+        .btn:hover::after{
+            color: white;
+            width: 100%;
         }
         
     }
