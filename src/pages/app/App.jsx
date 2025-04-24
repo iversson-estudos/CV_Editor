@@ -1,8 +1,12 @@
-
+import { useState } from 'react';
+import styles from './App.module.css';
 
 export default function App () {
        return (
-       <>
-         <p>APP</p>
-       </>
+       <div className={styles.inputsContainer}>
+          <div>
+            <label>NAME</label>
+            <input type="text" />
+          </div>
+       </div>
 )}
