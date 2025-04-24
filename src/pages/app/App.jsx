@@ -7,6 +7,7 @@ export default function App () {
           <div className={styles.inputsContainer}>
           <form>
             <TextInput  name='name' label='Name' type='text' inputClass={styles.input}/>
+            <TextInput name='experience' label='Experience' inputClass={styles.input} />
           </form>
        </div>
       </div> 

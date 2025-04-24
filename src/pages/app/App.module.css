@@ -7,9 +7,14 @@
     .inputsContainer{
         grid-column: 1 / 2;
         
-        div{
+        form{
             display: flex;
             flex-direction: column;
+
+            .input{
+
+            }
+
         }
     }
 }
