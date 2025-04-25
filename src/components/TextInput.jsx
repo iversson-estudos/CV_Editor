@@ -1,10 +1,20 @@
 import React from "react";
 
-export function TextInput({name,type,inputClass,label,divClass,placeHolder='...'}) {
-    return (
-    <div className={divClass}> 
+export function TextInput({name,type,size,label,divClass,placeHolder='...'}) {
+    
+  const divStyle = {
+    display:'flex', 
+    flexDirection:'column'
+  }
+  
+  const inputStyle = {
+    height:`${size}px` 
+  };
+  
+  return (
+    <div className={divClass} style={divStyle}> 
       <label htmlFor={name}>{label}</label>
-      <input name={name} type={type} id={name} placeholder={placeHolder} className={inputClass}/>
+      <input name={name} type={type} id={name} placeholder={placeHolder} style={inputStyle}/>
     </div>
 )}
   

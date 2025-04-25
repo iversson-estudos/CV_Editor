@@ -7,10 +7,10 @@ export default function App () {
        <div className={styles.appContainer}>
           <div className={styles.inputsContainer}>
           <form>
-            <TextInput  divClass={styles.name} name='name' label='Name' placeHolder='Enter your name' type='text' inputClass={styles.input}/>
+            <TextInput  divClass={styles.name} name='name' label='Name' placeHolder='Enter your name' type='text' />
             <div className={styles.experienceContainer}>
-                <TextLabeled divClass={styles.experience} name='experience' placeHolder='Past Experiences' label='Experience' textClass={[styles.input,styles.inputBig].join(' ')} />
-                <TextLabeled divClass={styles.experience} name='experience' placeHolder='Past Experiences' label='Experience' textClass={[styles.input,styles.inputBig].join(' ')} />
+                <TextLabeled divClass={styles.experience} name='experience' placeHolder='Past Experiences' label='Experience' size={80}/>
+                <TextLabeled divClass={styles.experience} name='experience' placeHolder='Company' label='Company'  />
             </div>
           </form>
        </div>
