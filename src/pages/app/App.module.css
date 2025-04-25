@@ -4,25 +4,43 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 
+    textarea{
+        resize: none;
+        border: 0px;
+    }
+
     .inputsContainer{
         grid-column: 1 / 2;
         
         form{
             display: flex;
-            flex-direction: column;
-
-            label{
-                margin: 4px;
-            }
-
-            .input{
-                margin:  0 4px 0 4px;
-
-            }
+            flex-direction: column;           
+          
             .inputBig{
-                height: 80px;
+            height: 80px;
+            } 
+            
+            > *{
+            display: flex;
+            flex-direction: column;
+            margin: 4px;
             }
+          
 
+           .experienceContainer > *{
+               display: flex;
+               flex-direction: column;
+           }
+
+
+
+
+           
+            
+
+            
+
+            
         }
     }
 }

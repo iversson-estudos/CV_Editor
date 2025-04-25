@@ -16,6 +16,7 @@ body{
     height: 100vh;  
     font-family: var(--font);
     font-style: normal;
-    font-weight: 200;
+    font-weight: 300;
     background-color: var(--bgcolor);
 }
+
