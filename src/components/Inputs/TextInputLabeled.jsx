@@ -1,6 +1,6 @@
 import React from "react";
 
-export function TextInput({name,type,size,label,divClass,placeHolder='...'}) {
+export function TextInputLabeled({name,type,size,label,divClass,placeHolder='...'}) {
     
   const divStyle = {
     display:'flex', 

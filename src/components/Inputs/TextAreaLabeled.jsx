@@ -1,14 +1,14 @@
 import React from "react";
 
-export function TextLabeled({name,type,size,label,divClass,placeHolder='...'}) {
+export function TextAreaLabeled({name,type,size,label,divClass,placeHolder='...'}) {
   
   const divStyle = {
     display:'flex', 
     flexDirection:'column'
   }
-const inputStyle = {
+  const inputStyle = {
   height:`${size}px` 
-};
+  }
 
 
   return (

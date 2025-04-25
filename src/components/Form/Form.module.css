@@ -1,0 +1,10 @@
+    textarea{
+        resize: none;
+        border: 0px;
+    }
+
+    .inputsContainer{
+        grid-column: 1 / 2;
+        display: flex;
+        flex-direction: column;    
+    }
