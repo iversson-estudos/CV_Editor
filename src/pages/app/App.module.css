@@ -11,36 +11,16 @@
 
     .inputsContainer{
         grid-column: 1 / 2;
+        display: flex;
+        flex-direction: column;
         
-        form{
-            display: flex;
-            flex-direction: column;           
-          
-            .inputBig{
-            height: 80px;
-            } 
-            
-            > *{
+        > *,> * *{
             display: flex;
             flex-direction: column;
-            margin: 4px;
-            }
-          
-
-           .experienceContainer > *{
-               display: flex;
-               flex-direction: column;
-           }
-
-
-
-
-           
-            
-
-            
-
-            
+        }
+        
+        .inputBig{
+                height: 80px;
         }
     }
 }
