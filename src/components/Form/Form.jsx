@@ -3,7 +3,7 @@ import { TextInputLabeled } from '../Inputs/TextInputLabeled';
 import { TextAreaLabeled } from '../Inputs/TextAreaLabeled';
 import styles from './Form.module.css';
 
-export function Form({}) {
+export  function Form({}) {
   return (
       <div className={styles.inputsContainer}>
               <form>
