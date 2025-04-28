@@ -1,6 +1,6 @@
 import React from "react";
 
-export function TextAreaLabeled({name,type,size,label,divClass,placeHolder='...'}) {
+export function TextAreaLabeled({name,type,size,label,divClass,handleChange,placeHolder='...'}) {
   
   const divStyle = {
     display:'flex', 
@@ -14,7 +14,7 @@ export function TextAreaLabeled({name,type,size,label,divClass,placeHolder='...'
   return (
     <div className={divClass} style={divStyle}> 
       <label htmlFor={name}>{label}</label>
-      <textarea name={name} type={type} id={name} placeholder={placeHolder} style={inputStyle}/>
+      <textarea name={name} type={type} id={name} placeholder={placeHolder} onChange={handleChange} style={inputStyle}/>
     </div>
 )}
   
