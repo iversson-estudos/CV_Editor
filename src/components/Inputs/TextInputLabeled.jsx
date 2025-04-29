@@ -1,6 +1,6 @@
-import {React,useState} from "react";
+import {React} from "react";
 
-export function TextInputLabeled({name,type,size,label,handleChange,divClass,placeHolder='...'}) {
+export function TextInputLabeled({name,setCount,count,type,size,label,handleChange,divClass,placeHolder='...'}) {
  /*STYLES*/   
   const divStyle = {
     display:'flex', 
@@ -11,14 +11,7 @@ export function TextInputLabeled({name,type,size,label,handleChange,divClass,pla
     height:`${size}px` 
   };
   
-  /*DINAMIC SIZE*/
-  const [numberOfDivs,setNumberOfDivs] = useState(1);
-
-  const incrementDivs = ()=>{
-    setNumberOfDivs(numberOfDivs+1);
-  }
-
-  function CompleteComponent(){
+ function CompleteComponent(){
     return (
       <div className={divClass} style={divStyle}> 
         <label htmlFor={name}>{label}</label>
@@ -30,9 +23,9 @@ export function TextInputLabeled({name,type,size,label,handleChange,divClass,pla
   const  renderDiv = () => {
     const components = [];
     
-    for(let i = 0;i<numberOfDivs;i++){
+    for(let i = 0;i<count;i++){
       components.push(<CompleteComponent key={`child-${i}`}/>);
-      console.log('created button number:' + `${i}`);
+      console.log('created component number:' + `${i}`);
     }
     return components;
   };
@@ -41,7 +34,7 @@ export function TextInputLabeled({name,type,size,label,handleChange,divClass,pla
   return (
     <>
       {renderDiv()}
-      <button onClick={incrementDivs}>+</button>
+      <button onClick={setCount}>+</button>
     </>
   )
   

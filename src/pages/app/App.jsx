@@ -1,7 +1,7 @@
 import { Form } from '../../components/Form/Form';
 import {  Cv  } from '../../components/CV/Cv'
 import styles from './App.module.css'
-import { useState } from 'react';
+import { useState} from 'react';
 
 
 export default function App () {
