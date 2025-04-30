@@ -2,12 +2,12 @@ import React from "react";
 
 
 
-export function Cv({ value }) {
+export function Cv() {
     return (
       <div>
-        <h2>Name:{value.name}</h2>
-        <p>Experience: {value.experience}</p>
-        <p>Company:{value.company}</p>
+        <h2>Name:</h2>
+        <p>Experience:</p>
+        <p>Company:</p>
       </div>
     );
   }
