@@ -1,7 +1,7 @@
 import {React} from "react";
 
-export function TextInputLabeled({name,type,size,label,divClass,placeHolder='...'}) {
-  
+export function TextInputLabeled({name,size,label,divClass,placeHolder='...'}) {
+  /*STYLES*/
   const divStyle = {
     display:'flex', 
     flexDirection:'column'
@@ -10,11 +10,11 @@ export function TextInputLabeled({name,type,size,label,divClass,placeHolder='...
   const inputStyle = {
     height:`${size}px` 
   };
-  
+  /*THE COMPONENT*/
   return (
     <div className={divClass} style={divStyle}> 
       <label htmlFor={name}>{label}</label>
-      <input name={name} type={type} id={name}  placeholder={placeHolder} style={inputStyle}/>
+      <input name={name} type='text' id={name}  placeholder={placeHolder} style={inputStyle}/>
     </div>
 )}
 
