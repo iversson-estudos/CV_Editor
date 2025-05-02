@@ -12,6 +12,25 @@ export function MultiDivTextArea({name,count=1,type,size,label,divClass,handleCh
    
    /*USE STATE FOR DIV COUNTER*/
    const [divCount,setDivCount]= useState(count);
+   /*USE STATE FOR DIV VALUES, EMPTY ARRAY SIZE OF DIV COUNT*/
+   const [values,setValues]= useState(Array(count).fill(''));
+
+
+  /*HANDLE TEXT CHANGES*/ 
+  const handleTextChanges = (index,value)=>{
+    const newValues = [...values];
+    newValues[index]=value;
+    setValues(newValues);
+  }
+
+  /*CLICK HANDLER*/
+  const handleClick=()=>{
+    setDivCount = (prevCount=>prevCount+1);
+    setValues(prevValues=>[...prevValues,'']);
+  }
+
+
+
 
    /*CREATES DIVS*/
    const Component = [];
