@@ -1,4 +1,4 @@
-import Button from '../../components/Button.jsx';
+import  ButtonWithSpan from '../../components/ButtonWithSpan.jsx';
 import { useState } from 'react';
 import styles from './Homepage.module.css';
 import App from '../app/App.jsx'; 
@@ -12,7 +12,7 @@ export default function Homepage() {
       {currentPage === 'homepage' && (
       <div className={styles.homepageContainer}>
           <p className={styles.para}>Welcome to the CV App</p>
-          <Button 
+          <ButtonWithSpan 
             btnClass={styles.btn}
             text='Lets Go'
             onClick={() => setCurrentPage('app')}
