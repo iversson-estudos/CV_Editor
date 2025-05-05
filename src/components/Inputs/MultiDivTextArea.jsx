@@ -16,14 +16,14 @@ export function MultiDivTextArea({name,handleChange,count=1,type,size,label,divC
 
 
   /*HANDLE TEXT CHANGES*/ 
-  const handleTextChange = (index,value)=>{
+  const handleTextChange = (index,value,name)=>{
     const newValues = [...values];
     newValues[index]=value;
     setValues(newValues);
 
 
     /*IF YOU WANNA SEND DATA TO PARENT COMPONENT*/
-    handleChange(index,value);
+    handleChange(index,value,name);
   }
 
   /*CLICK HANDLER*/
@@ -38,7 +38,7 @@ export function MultiDivTextArea({name,handleChange,count=1,type,size,label,divC
    const Component = values.map((value,i)=>(
     <div style={divStyle} className={divClass} key={`div-${i}`}>
       <label htmlFor={`${name}-${i}`}>{label} {i+1}</label>
-      <textarea name={`${name}-${i}`}  type={type} id={`${name}-${i}`} placeholder={placeHolder} onChange={(e)=>handleTextChange(i,e.target.value)} value={value} style={inputStyle}/>
+      <textarea name={`${name}-${i}`}  type={type} id={`${name}-${i}`} placeholder={placeHolder} onChange={(e)=>handleTextChange(i,e.target.value,name)} value={value} style={inputStyle}/>
     </div>
    ));
 
@@ -54,7 +54,6 @@ export function MultiDivTextArea({name,handleChange,count=1,type,size,label,divC
   return (
     <>
       {Component}
-      <button type="button" onClick={handleClick}>+</button>
     </>
 )}
   
