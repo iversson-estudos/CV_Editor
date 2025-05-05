@@ -1,6 +1,6 @@
 import {React,useState} from "react";
 
-export function MultiDivTextArea({name,count=1,type,size,label,divClass,placeHolder='...'}) {
+export function MultiDivTextArea({name,handleChange,count=1,type,size,label,divClass,placeHolder='...'}) {
 /*STYLES*/  
   const divStyle = {
     display:'flex', 
@@ -20,6 +20,10 @@ export function MultiDivTextArea({name,count=1,type,size,label,divClass,placeHol
     const newValues = [...values];
     newValues[index]=value;
     setValues(newValues);
+
+
+    /*IF YOU WANNA SEND DATA TO PARENT COMPONENT*/
+    handleChange(index,value);
   }
 
   /*CLICK HANDLER*/
