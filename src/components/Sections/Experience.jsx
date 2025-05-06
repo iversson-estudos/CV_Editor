@@ -1,17 +1,18 @@
 import {React} from "react";
 import   { TextAreaLabeled } from "../Inputs/TextAreaLabeled";
+import { TextInputLabeled } from "../Inputs/TextInputLabeled"
 import styles from './Experience.module.css';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DesktopDateTimePickerLayout } from "@mui/x-date-pickers";
 
 export function Experience(){
 
 return (
 <div className={styles.experienceContainer}>
-                    <TextAreaLabeled    divClass={styles.textArea} name='experience'  placeHolder='Past Experiences' label='Experience' size={80} />
-                    <TextAreaLabeled    divClass={styles.textArea} name='company' placeHolder='Company' label='Company' size={24} />
+                    <TextInputLabeled    divClass={styles.textArea} name='title' placeHolder='eg: Web Developer...' label='Title' size={24} />
+                    <TextInputLabeled    divClass={styles.textArea} name='company' placeHolder='eg: Google, Apple...' label='Company' size={24} />
+                    <TextAreaLabeled    divClass={styles.textArea} name='experience'  placeHolder='I was responsible for...' label='Experience' size={80} />
                     <div className={styles.dateContainer}>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DatePicker  label="From" />
