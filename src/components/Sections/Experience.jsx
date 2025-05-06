@@ -1,4 +1,4 @@
-import {React} from "react";
+import {React,useState} from "react";
 import   { TextAreaLabeled } from "../Inputs/TextAreaLabeled";
 import { TextInputLabeled } from "../Inputs/TextInputLabeled"
 import styles from './Experience.module.css';
@@ -6,8 +6,27 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
-export function Experience(){
+export function Experience(count=1){
 
+/*SAVES INPUT VALUES*/    
+const [xpDivValues,setXpDivValues] = useState(Array(count).fill(''));
+
+/*HANDLES TEXT CHANGE*/
+
+
+
+
+
+
+
+/*CREATES COMPONENTS BASED ON COUNT */
+const childComponents = xpDivValues.map((index,name,value)=>{
+
+
+
+
+
+})
 return (
 <div className={styles.experienceContainer}>
                     <TextInputLabeled    divClass={styles.textArea} name='title' placeHolder='eg: Web Developer...' label='Title' size={24} />
@@ -21,6 +40,14 @@ return (
                     </div>
 </div>
 )
+
+
+
+
+
+
+
+
 }
 
 
