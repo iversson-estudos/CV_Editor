@@ -1,13 +1,25 @@
-import {React,use,useState} from "react";
+import {React} from "react";
+import   { TextAreaLabeled } from "../Inputs/TextAreaLabeled";
+import styles from './Experience.module.css';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DesktopDateTimePickerLayout } from "@mui/x-date-pickers";
 
-export function Experience(handleChange){
+export function Experience(){
 
-const [divCount,setDivCount] = useState(1);
-
-
-
-
-
+return (
+<div className={styles.experienceContainer}>
+                    <TextAreaLabeled    divClass={styles.textArea} name='experience'  placeHolder='Past Experiences' label='Experience' size={80} />
+                    <TextAreaLabeled    divClass={styles.textArea} name='company' placeHolder='Company' label='Company' size={24} />
+                    <div className={styles.dateContainer}>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <DatePicker  label="From" />
+                            <DatePicker  label="To" />
+                        </LocalizationProvider>
+                    </div>
+</div>
+)
 }
 
 
@@ -18,7 +30,3 @@ const [divCount,setDivCount] = useState(1);
 
 
 
-<div className={styles.experienceContainer}>
-                    <MultiDivTextArea divClass={styles.experience} name='experience'  placeHolder='Past Experiences' label='Experience' size={80} />
-                    <MultiDivTextArea divClass={styles.experience} name='company' placeHolder='Company' label='Company' size={24} />
-</div>

@@ -1,0 +1,11 @@
+.experienceContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 2px solid greenyellow;
+     
+    .dateContainer{
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
