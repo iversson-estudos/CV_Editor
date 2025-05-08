@@ -20,3 +20,7 @@ body{
     background-color: var(--bgcolor);
 }
 
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}

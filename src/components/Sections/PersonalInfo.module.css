@@ -1,0 +1,12 @@
+.personalInfoContainer{
+    display: flex;
+    flex-direction: column;
+
+    input{
+        border: 2px solid black;
+    }
+
+    
+
+   
+}

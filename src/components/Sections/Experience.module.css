@@ -1,17 +1,19 @@
 .experienceContainer{
     display: flex;
     flex-direction: column;
-    border: 2px solid greenyellow;
+
+    input,textarea{
+        border: 2px solid black;
+    }
     
      
     .dateContainer{
         display: flex;
         justify-content: space-evenly;
+        margin: 8px;
     }
 }
-.experienceContainer .hidden{
-    visibility: collapse;
-}
+
 
 .addDivBtn{
     width: 100%;
