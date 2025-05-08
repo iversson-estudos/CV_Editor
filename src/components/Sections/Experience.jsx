@@ -10,7 +10,7 @@ import { Button } from "@mui/material";
 
 
 
-export function Experience(count=1){
+export function Experience({count=3}){
 
 /*SAVES INPUT VALUES*/    
 const [xpDivValues,setXpDivValues] = useState(
@@ -53,8 +53,9 @@ const addNewDiv = () => {
 
 return (
     <>  
+    {console.log(xpDivValues)}
         {xpDivValues.map((component) => (
-            <ChildComponent data={component} handleInputChange={handleInputChange}/>
+            <ChildComponent key={component.id} data={component} handleInputChange={handleInputChange}/>
         ))}
         <Button onClick={()=>{addNewDiv()}}>+</Button>
     </>
@@ -64,6 +65,7 @@ return (
 
 /*CREATES CHILD COMPONENT*/
 function ChildComponent ({data,handleInputChange}){
+    console.log("Creating child n: "+data.id);
     return (    
             <div key={data.id} className={styles.experienceContainer}>
                                 <TextInputLabeled     divClass={styles.textArea} name='title' placeHolder='eg: Web Developer...' label='Title' size={24} value={data.title} onChange={(e) => handleInputChange(data.id, 'title', e.target.value)}/>

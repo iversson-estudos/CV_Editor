@@ -9,7 +9,7 @@ export  function Form() {
   return (
       <div className={styles.inputsContainer}>
               <form>
-                <Experience/>
+                <Experience />
               </form>
       </div>
   )}
