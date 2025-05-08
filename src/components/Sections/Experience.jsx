@@ -6,6 +6,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
+import { Button } from "@mui/material";
 
 
 
@@ -29,8 +30,22 @@ const handleInputChange = (id, field, value) => {
             item.id === id ? { ...item, [field]: value } : item
         )
     );
+    console.log("Changing value of "+field+" index "+id+" to "+value);
 };
 
+const addNewDiv = () => {
+    setXpDivValues(prevValues => [
+        ...prevValues,
+        {
+            id: prevValues.length,
+            title: '',
+            company: '',
+            experience: '',
+            dateFrom: dayjs(),
+            dateTo: dayjs()
+        }
+    ]);
+};
 
 
 
@@ -41,12 +56,9 @@ return (
         {xpDivValues.map((component) => (
             <ChildComponent data={component} handleInputChange={handleInputChange}/>
         ))}
+        <Button onClick={()=>{addNewDiv()}}>+</Button>
     </>
 );  
-
-
-
-
 }
 
 
