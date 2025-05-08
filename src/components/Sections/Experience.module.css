@@ -9,6 +9,9 @@
         justify-content: space-evenly;
     }
 }
+.experienceContainer .hidden{
+    visibility: collapse;
+}
 
 .addDivBtn{
     width: 100%;

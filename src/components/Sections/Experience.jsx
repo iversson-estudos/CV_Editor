@@ -66,7 +66,8 @@ return (
 /*CREATES CHILD COMPONENT*/
 function ChildComponent ({data,handleInputChange}){
     console.log("Creating child n: "+data.id);
-    return (    
+    return (  
+           
             <div key={data.id} className={styles.experienceContainer}>
                                 <TextInputLabeled     divClass={styles.textArea} name='title' placeHolder='eg: Web Developer...' label='Title' size={24} value={data.title} onChange={(e) => handleInputChange(data.id, 'title', e.target.value)}/>
                                 <TextInputLabeled    divClass={styles.textArea} name='company' placeHolder='eg: Google, Apple...' label='Company' size={24} value={data.company} onChange={(e) => handleInputChange(data.id, 'company', e.target.value)}/>
@@ -78,6 +79,7 @@ function ChildComponent ({data,handleInputChange}){
                                     </LocalizationProvider>
                                 </div>
             </div>
+            
     )}
 
 
