@@ -6,11 +6,11 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
-import { Button } from "@mui/material";
+import ButtonWithSpan from '../ButtonWithSpan'
 
 
 
-export function Experience({count=3}){
+export function Experience({count=1}){
 
 /*SAVES INPUT VALUES*/    
 const [xpDivValues,setXpDivValues] = useState(
@@ -57,7 +57,7 @@ return (
         {xpDivValues.map((component) => (
             <ChildComponent key={component.id} data={component} handleInputChange={handleInputChange}/>
         ))}
-        <Button onClick={()=>{addNewDiv()}}>+</Button>
+        <ButtonWithSpan btnClass={styles.addDivBtn} text={'+'} onClick={addNewDiv}/>
     </>
 );  
 }
