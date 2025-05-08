@@ -9,15 +9,16 @@ import dayjs from 'dayjs';
 
 export function Experience({count = 1}) {
     const [xpDivValues, setXpDivValues] = useState(
-        Array.from({ length: count }, (_, i) => ({
-            id: i,  // Add unique ID
+        [...Array(count)].map((_, i) => ({
+            id: i,
             title: '',
             company: '',
             experience: '',
             dateFrom: dayjs(),
             dateTo: dayjs()
-        }))
-    );
+          })));
+
+
 
     const handleInputChange = (id, field, value) => {
         setXpDivValues(prev => 
