@@ -12,22 +12,34 @@ import dayjs from 'dayjs';
 export function Experience(count=1){
 
 /*SAVES INPUT VALUES*/    
-const [xpDivValues,setXpDivValues] = useState(Array(count).fill(
-    {
-        title:'A',
-        company:'',
-        experience:'A',
-        dateFrom:dayjs(),
-        dateTo:dayjs()
-    }
-));
+const [xpDivValues,setXpDivValues] = useState(
+    [...Array(count)].map((_, i) => ({
+        id: i,
+        title: '',
+        company: '',
+        experience: '',
+        dateFrom: dayjs(),
+        dateTo: dayjs()
+    })));
+
+/*HANDLE CHANGES*/
+const handleInputChange = (id, field, value) => {
+    setXpDivValues(prev => 
+        prev.map(item => 
+            item.id === id ? { ...item, [field]: value } : item
+        )
+    );
+};
+
+
+
 
 
 
 return (
     <>  
-        {xpDivValues.map((component, index) => (
-            <ChildComponent key={index} data={component} />
+        {xpDivValues.map((component) => (
+            <ChildComponent data={component} handleInputChange={handleInputChange}/>
         ))}
     </>
 );  
@@ -35,29 +47,25 @@ return (
 
 
 
-
-
-
 }
 
 
-
-
-
-
-
 /*CREATES CHILD COMPONENT*/
-function ChildComponent ({data}){
+function ChildComponent ({data,handleInputChange}){
     return (    
-            <div className={styles.experienceContainer}>
-                                <TextInputLabeled     divClass={styles.textArea} name='title' placeHolder='eg: Web Developer...' label='Title' size={24} value={data.title}/>
-                                <TextInputLabeled    divClass={styles.textArea} name='company' placeHolder='eg: Google, Apple...' label='Company' size={24} value={data.company}/>
-                                <TextAreaLabeled    divClass={styles.textArea} name='experience'  placeHolder='I was responsible for...' label='Experience' size={80} value={data.experience}/>
+            <div key={data.id} className={styles.experienceContainer}>
+                                <TextInputLabeled     divClass={styles.textArea} name='title' placeHolder='eg: Web Developer...' label='Title' size={24} value={data.title} onChange={(e) => handleInputChange(data.id, 'title', e.target.value)}/>
+                                <TextInputLabeled    divClass={styles.textArea} name='company' placeHolder='eg: Google, Apple...' label='Company' size={24} value={data.company} onChange={(e) => handleInputChange(data.id, 'company', e.target.value)}/>
+                                <TextAreaLabeled    divClass={styles.textArea} name='experience'  placeHolder='I was responsible for...' label='Experience' size={80} value={data.experience} onChange={(e) => handleInputChange(data.id, 'experience', e.target.value)}/>
                                 <div className={styles.dateContainer}>
                                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                        <DatePicker  label="From" value={data.dateFrom}/>
-                                        <DatePicker  label="To" value={data.dateTo}/>
+                                        <DatePicker  label="From" value={data.dateFrom} onChange={(newValue) => handleInputChange(data.id, 'dateFrom', newValue)}/>
+                                        <DatePicker  label="To" value={data.dateTo} onChange={(newValue) => handleInputChange(data.id, 'dateTo', newValue)}/>
                                     </LocalizationProvider>
                                 </div>
             </div>
     )}
+
+
+
+
