@@ -10,10 +10,10 @@ import ButtonWithSpan from '../ButtonWithSpan'
 
 
 
-export function Experience({count=1}){
+export function Experience({count=1, sendDataUp}){
 
 /*SAVES INPUT VALUES*/    
-const [xpDivValues,setXpDivValues] = useState(
+const [experienceData,setExperienceData] = useState(
     [...Array(count)].map((_, i) => ({
         id: i,
         title: '',
@@ -23,18 +23,19 @@ const [xpDivValues,setXpDivValues] = useState(
         dateTo: dayjs()
     })));
 
+
 /*HANDLE CHANGES*/
 const handleInputChange = (id, field, value) => {
-    setXpDivValues(prev => 
+    setExperienceData(prev => 
         prev.map(item => 
             item.id === id ? { ...item, [field]: value } : item
         )
     );
-    console.log("Changing value of "+field+" index "+id+" to "+value);
+    sendDataUp(experienceData);
 };
 
 const addNewDiv = () => {
-    setXpDivValues(prevValues => [
+    setExperienceData(prevValues => [
         ...prevValues,
         {
             id: prevValues.length,
@@ -53,8 +54,8 @@ const addNewDiv = () => {
 
 return (
     <>  
-    {console.log(xpDivValues)}
-        {xpDivValues.map((component) => (
+    {console.log(experienceData)}
+        {experienceData.map((component) => (
             <ChildComponent key={component.id} data={component} handleInputChange={handleInputChange}/>
         ))}
         <ButtonWithSpan btnClass={styles.addDivBtn} text={'+'} onClick={addNewDiv}/>
