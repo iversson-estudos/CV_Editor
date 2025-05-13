@@ -29,12 +29,12 @@ export function Education({sendDataUp}){
 
     return(
         <div className={styles.educationContainer}>
-            <TextInputLabeled name='Course' placeHolder='Analytics...' label='Course' onChange={(e) => handleChange("course", e.target.value)}  value={educationData.course}/>
-            <TextInputLabeled name='School Name' placeHolder='University of Birmigham' label='School'onChange={(e) => handleChange("school", e.target.value)}  value={educationData.school}/>
+            <TextInputLabeled name='course' placeHolder='Analytics...' label='Course' onChange={(e) => handleChange(e.target.name, e.target.value)}  value={educationData.course}/>
+            <TextInputLabeled name='school' placeHolder='University of Birmigham' label='School'onChange={(e) => handleChange(e.target.name, e.target.value)}  value={educationData.school}/>
             <div className={styles.dateContainer}>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker  label="From" onChange={(newValue) => handleChange('dateFrom', newValue)}  value={educationData.dateFrom}/>
-                    <DatePicker  label="To" onChange={(newValue) => handleChange('dateTo', newValue)}  value={educationData.dateTo} />
+                    <DatePicker  label="From" name='dateFrom' onChange={(newValue) => handleChange(e.target.name, newValue)}  value={educationData.dateFrom}/>
+                    <DatePicker  label="To" name='dateTo' onChange={(newValue) => handleChange(e.target.name, newValue)}  value={educationData.dateTo} />
                 </LocalizationProvider>
             </div>   
         </div>)
