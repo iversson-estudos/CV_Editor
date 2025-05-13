@@ -3,7 +3,7 @@ import { TextInputLabeled } from '../Inputs/TextInputLabeled'
 import { InputLabeled } from '../Inputs/InputLabeled'
 import { useState } from 'react';
 
-export function PersonalInfo(sendDataUp){
+export function PersonalInfo({sendDataUp}){
 
 const [personalData,setPersonalData] = useState(
     {
@@ -17,11 +17,10 @@ const [personalData,setPersonalData] = useState(
    );
 
    const handleChange = (field,value)=>{
-    let updatedData = {...personalData};
-    updatedData[field] = value;
+    const updatedData = {...personalData,[field]:value};
     setPersonalData(updatedData);
 
-    sendDataUp(personalData);
+    sendDataUp('personalInfo',updatedData);
    }
 
 

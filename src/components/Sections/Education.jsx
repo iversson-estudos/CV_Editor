@@ -7,7 +7,7 @@ import dayjs from 'dayjs';
 import { useState } from 'react';
 
 
-export function Education(sendDataUp){
+export function Education({sendDataUp}){
 
    const [educationData,setEducationData] = useState(
     {
@@ -20,8 +20,10 @@ export function Education(sendDataUp){
 
 
    const handleChange = (field, value) => {
-    setEducationData({...educationData, [field]: value });
-    sendDataUp(educationData);
+    const updatedData = {...educationData,[field]:value};
+    setEducationData(updatedData);
+
+    sendDataUp('education',updatedData);
 };
 
 

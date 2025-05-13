@@ -26,12 +26,14 @@ const [experienceData,setExperienceData] = useState(
 
 /*HANDLE CHANGES*/
 const handleInputChange = (id, field, value) => {
-    setExperienceData(prev => 
-        prev.map(item => 
-            item.id === id ? { ...item, [field]: value } : item
-        )
-    );
-    sendDataUp(experienceData);
+   
+    const updatedData = experienceData.map(item => 
+    item.id === id ? { ...item, [field]: value } : item
+  );
+
+    setExperienceData(updatedData);
+
+    sendDataUp('experience',updatedData);
 };
 
 const addNewDiv = () => {
