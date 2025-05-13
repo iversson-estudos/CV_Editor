@@ -77,8 +77,8 @@ function ChildComponent ({data,handleInputChange}){
                                 <TextAreaLabeled    divClass={styles.textArea} name='experience'  placeHolder='I was responsible for...' label='Experience' size={80} value={data.experience} onChange={(e) => handleInputChange(data.id, e.target.name, e.target.value)}/>
                                 <div className={styles.dateContainer}>
                                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                        <DatePicker  label="From" name='dateFrom' value={data.dateFrom} onChange={(newValue) => handleInputChange(data.id, e.target.name, newValue)}/>
-                                        <DatePicker  label="To" name='dateTo' value={data.dateTo} onChange={(newValue) => handleInputChange(data.id, e.target.name, newValue)}/>
+                                        <DatePicker  label="From" name='dateFrom' value={data.dateFrom} onChange={(newValue) => handleInputChange(data.id, 'dateFrom', newValue)}/>
+                                        <DatePicker  label="To" name='dateTo' value={data.dateTo} onChange={(newValue) => handleInputChange(data.id, 'dateTo', newValue)}/>
                                     </LocalizationProvider>
                                 </div>
             </div>
