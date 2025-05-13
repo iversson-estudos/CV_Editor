@@ -1,19 +1,43 @@
 import styles from './PersonalInfo.module.css'
 import { TextInputLabeled } from '../Inputs/TextInputLabeled'
 import { InputLabeled } from '../Inputs/InputLabeled'
+import { useState } from 'react';
 
-export function PersonalInfo(){
+export function PersonalInfo(sendDataUp){
+
+const [personalData,setPersonalData] = useState(
+    {
+        name:'',
+        phone:'',
+        mail:'',
+        website:'',
+        nationality:'',
+        address:''
+    }
+   );
+
+   const handleChange = (field,value)=>{
+    let updatedData = {...personalData};
+    updatedData[field] = value;
+    setPersonalData(updatedData);
+
+    sendDataUp(personalData);
+   }
+
+
+
+
 
 
 
     return(
         <div className={styles.personalInfoContainer}>
-            <TextInputLabeled name='Name' placeHolder='John Doe' label='Complete Name'/>
-            <InputLabeled placeHolder='99999-9999'   label='Phone Number' type='tel'/>
-            <TextInputLabeled name='Mail' placeHolder='Email' label='Email'/>
-            <TextInputLabeled name='Website' placeHolder='Portfolio.com' label='Website'/>
-            <TextInputLabeled name='Nationality' placeHolder='Brazil' label='Nationality'/>
-            <TextInputLabeled name='Address' placeHolder='City' label='Address'/>
+            <TextInputLabeled name='name' placeHolder='John Doe' label='Complete Name' value={personalData.name} onChange={(e)=>handleChange('name',e.target.value)}/>
+            <InputLabeled name='phone' placeHolder='99999-9999'   label='Phone Number' type='tel' value={personalData.phone} onChange={(e)=>handleChange(e.target.name,e.target.value)}/>
+            <TextInputLabeled name='mail' placeHolder='John.Doe@....' label='Mail' value={personalData.mail} onChange={(e)=>handleChange(e.target.name,e.target.value)}/>
+            <TextInputLabeled name='website' placeHolder='Portfolio.com' label='Website' value={personalData.website} onChange={(e)=>handleChange(e.target.name,e.target.value)}/>
+            <TextInputLabeled name='nationality' placeHolder='Brazil' label='Nationality' value={personalData.nationality} onChange={(e)=>handleChange(e.target.name,e.target.value)}/>
+            <TextInputLabeled name='address' placeHolder='City' label='Address' value={personalData.address} onChange={(e)=>handleChange(e.target.name,e.target.value)}/>
         </div>
     )
     
