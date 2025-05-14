@@ -1,12 +1,8 @@
 .educationContainer{
     display: flex;
     flex-direction: column;
-    border-radius: 0.5rem;
-    border: 16px solid yellow;
 
-
-    .dateContainer{
-        
+    .dateContainer{        
         display: flex;
         justify-content: space-evenly;
         margin: 8px;

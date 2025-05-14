@@ -1,15 +1,4 @@
 .personalInfoContainer{
     display: flex;
-    flex-direction: column;
-    border-radius: 0.5rem;
-    border: 16px solid yellow;
-
-
-    input{
-        border: 2px solid black;
-    }
-
-    
-
-   
+    flex-direction: column;  
 }

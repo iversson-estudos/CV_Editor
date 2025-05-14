@@ -25,6 +25,6 @@ export default function App () {
        return (
         <div className={styles.appContainer}>
           <Form  sendDataUp={sendDataUp} />
-          <Cv  />
+          <Cv data={cvData}/>
         </div>
 )}

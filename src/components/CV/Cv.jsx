@@ -1,14 +1,13 @@
 import React from "react";
 import styles from './Cv.module.css'
+import { PersonalInfo } from "./PersonalInfo";
 
 
 
-export function Cv() {
+export function Cv({data}) {
     return (
       <div className={styles.cvContainer}>
-        <h2>Name:</h2>
-        <p>Experience:</p>
-        <p>Company:</p>
+        <PersonalInfo data={data.personalInfo}/>
       </div>
     );
   }
