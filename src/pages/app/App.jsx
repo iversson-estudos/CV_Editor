@@ -9,7 +9,7 @@ export default function App () {
      const [cvData,setCvData] = useState({
       personalInfo:'',
       education:'',
-      experience:''
+      experience:['']
      });
 
      const sendDataUp = (field,value)=>{

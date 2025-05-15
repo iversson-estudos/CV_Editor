@@ -5,7 +5,6 @@ import styles from './Experience.module.css';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import dayjs from 'dayjs';
 import ButtonWithSpan from '../ButtonWithSpan'
 
 
@@ -19,8 +18,8 @@ const [experienceData,setExperienceData] = useState(
         title: '',
         company: '',
         experience: '',
-        dateFrom: dayjs(),
-        dateTo: dayjs()
+        dateFrom: null,
+        dateTo: null
     })));
 
 
@@ -44,8 +43,8 @@ const addNewDiv = () => {
             title: '',
             company: '',
             experience: '',
-            dateFrom: dayjs(),
-            dateTo: dayjs()
+            dateFrom: null,
+            dateTo: null
         }
     ]);
 };
