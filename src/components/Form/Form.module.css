@@ -1,6 +1,13 @@
 .formContainer{
+    grid-column: 1/2;
+    margin: 0 16px 0 16px;
     
-    input,textarea{
-        border: 2px solid black;
+    input,textarea,label{
+        border-radius: 0.5rem;
+        padding: 4px;
     }
+    
+
+
+
 }

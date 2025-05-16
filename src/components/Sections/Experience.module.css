@@ -11,7 +11,12 @@
 }
 
 
-.addDivBtn{
-    width: 100%;
-    height: 32px;
+.addDivBtnContainer{
+    display: flex;
+    justify-content: center;
+    
+    .addDivBtn{
+        width: 32px;
+        height: 32px;
+        }
 }

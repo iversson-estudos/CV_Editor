@@ -4,7 +4,7 @@
     --font:"Titillium Web", sans-serif;
     --fontsize-small:16px;
     --fontsize-medium:32px;
-    --fontsize-big:64px;
+    --fontsize-big: 64px;
     --bgcolor: darkslateblue;
     
 }
@@ -15,9 +15,13 @@ body{
     width: 100vw;
     height: 100vh;  
     font-family: var(--font);
-    font-style: normal;
+    font-size:  var(--fontsize-small);
     font-weight: 300;
     background-color: var(--bgcolor);
+
+    
+
+
 }
 
 input:focus::placeholder,

@@ -59,7 +59,9 @@ return (
         {experienceData.map((component) => (
             <ChildComponent key={component.id} data={component} handleInputChange={handleInputChange}/>
         ))}
-        <ButtonWithSpan btnClass={styles.addDivBtn} text={'+'} onClick={addNewDiv}/>
+        <div className={styles.addDivBtnContainer}>
+            <ButtonWithSpan btnClass={styles.addDivBtn} text={'+'} onClick={addNewDiv}/>
+        </div>
     </>
 );  
 }
