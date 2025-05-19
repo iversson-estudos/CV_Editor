@@ -15,7 +15,7 @@ body{
     height: 100vh;  
     font-family: var(--font);
     font-size:  var(--fontsize-small);
-    background-color: rosybrown;
+    background-color: var(--bgcolor);
 }
 
 input:focus::placeholder,
