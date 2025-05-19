@@ -1,10 +1,17 @@
 .educationContainer{
     display: flex;
     flex-direction: column;
+    padding: 16px;  
+
+    .title{
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
 
     .dateContainer{        
         display: flex;
         justify-content: space-evenly;
-        margin: 8px;
+        margin-top: 16px;
     }
 }

@@ -55,7 +55,8 @@ const addNewDiv = () => {
 
 return (
     <>  
-    {console.log(experienceData)}
+     <p className={styles.title}>Experience</p>
+        {console.log(experienceData)}
         {experienceData.map((component) => (
             <ChildComponent key={component.id} data={component} handleInputChange={handleInputChange}/>
         ))}

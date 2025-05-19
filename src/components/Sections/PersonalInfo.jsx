@@ -31,6 +31,7 @@ const [personalData,setPersonalData] = useState(
 
     return(
         <div className={styles.personalInfoContainer}>
+            <p className={styles.title}>Personal Info</p>
             <TextInputLabeled name='name' placeHolder='John Doe' label='Complete Name' value={personalData.name} onChange={(e)=>handleChange('name',e.target.value)}/>
             <InputLabeled name='phone' placeHolder='99999-9999'   label='Phone Number' type='tel' value={personalData.phone} onChange={(e)=>handleChange(e.target.name,e.target.value)}/>
             <TextInputLabeled name='mail' placeHolder='John.Doe@....' label='Mail' value={personalData.mail} onChange={(e)=>handleChange(e.target.name,e.target.value)}/>

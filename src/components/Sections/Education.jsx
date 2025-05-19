@@ -28,6 +28,7 @@ export function Education({sendDataUp}){
 
     return(
         <div className={styles.educationContainer}>
+            <p className={styles.title}>Education</p>
             <TextInputLabeled name='course' placeHolder='Analytics...' label='Course' onChange={(e) => handleChange(e.target.name, e.target.value)}  value={educationData.course}/>
             <TextInputLabeled name='school' placeHolder='University of Birmigham' label='School'onChange={(e) => handleChange(e.target.name, e.target.value)}  value={educationData.school}/>
             <div className={styles.dateContainer}>

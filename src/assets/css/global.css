@@ -6,7 +6,6 @@
     --fontsize-medium:32px;
     --fontsize-big: 64px;
     --bgcolor: darkslateblue;
-    
 }
 
 
@@ -16,12 +15,7 @@ body{
     height: 100vh;  
     font-family: var(--font);
     font-size:  var(--fontsize-small);
-    font-weight: 300;
-    background-color: var(--bgcolor);
-
-    
-
-
+    background-color: rosybrown;
 }
 
 input:focus::placeholder,
